@@ -1,0 +1,13 @@
+create database datascience;
+use datascience;
+create table students (id int primary key auto_increment, name varchar(50) not null, age int not null, email varchar(100) unique);
+create table courses (course_id int primary key auto_increment, course_name varchar(100) not null, course_fee decimal(10,2));
+alter table students add column phone_number varchar(15) unique;
+alter table students modify age int default  18;
+alter table courses rename column course_fee to fee;
+rename table students to learners;
+alter table learners drop column phone_number;
+drop table courses;
+alter table learners drop column email;
+drop database datascience;
+truncate students;
